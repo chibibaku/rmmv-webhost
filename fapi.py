@@ -7,7 +7,7 @@ import uvicorn
 app = FastAPI()
 
 # Path to the game files
-GAME_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Project1')
+GAME_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'game')
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 @app.get("/")
