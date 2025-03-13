@@ -4,10 +4,12 @@ import os
 app = Flask(__name__)
 
 # Path to the game files
-GAME_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Project1')
+GAME_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'game')
 
 @app.route('/')
 def index():
+    if os.path.exists(os.path.join(GAME_PATH, 'index.html')):
+        return send_from_directory(GAME_PATH, 'index.html')
     return send_from_directory(os.path.dirname(os.path.abspath(__file__)), 'index.html')
 
 @app.route('/<path:path>')
