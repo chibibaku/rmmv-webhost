@@ -23,6 +23,5 @@ def serve_file(path):
     return send_from_directory(GAME_PATH, path)
 
 if __name__ == '__main__':
-    port = 5000
-    print(f"Game server running at http://localhost:{port}/")
+    app.debug = True
     app.run(debug=True)
