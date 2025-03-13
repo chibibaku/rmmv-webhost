@@ -20,7 +20,7 @@ def index():
     if os.path.exists(root_index):
         return FileResponse(root_index)
     
-    raise HTTPException(status_code=404, detail="Index file not found")
+    raise HTTPException(status_code=404, detail=str(os.path.join(GAME_PATH, 'index.html') + " not found"))
 
 @app.get("/{path:path}")
 def serve_file(path: str):
